@@ -113,13 +113,13 @@ python3 -m venv .venv
 source .venv/bin/activate
 
 # Install ADK
-pip install google-adk
+pip install google-adk==1.28.0
 
 # Navigate to the app directory
 cd adk_agent/
 
 # Run the ADK web interface
-adk web
+adk web --allow_origins 'regex:https://.*\.cloudshell\.dev'
 ```
 
 ### 6. Chat with the Agent
@@ -133,6 +133,8 @@ Open the link provided by `adk web` in your browser. You can now chat with the a
 *    "Okay and I want to position this as a premium brand. What is the maximum price being charged for a 'Sourdough Loaf' in the LA Metro area?"
 *    "Now I want a revenue projection for December 2025. Look at my sales history and take data from my best performing store for the 'Sourdough Loaf'. Run a forecast for December 2025 to estimate the quantity I'll sell. Then, calculate the projected total revenue using just under the premium price we found (let's use $18)"
 *    "That'll cover my rent. Lastly, let's verify logistics. Find the closest "Restaurant Depot" to the proposed area and make sure that drive time is under 30 minutes for daily restocking."
+
+To abort the ADK session in Cloud Shell, press `Ctrl+C`.
 
 ### 7. Cleanup
 
